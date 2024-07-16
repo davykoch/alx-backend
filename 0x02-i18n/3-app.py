@@ -28,11 +28,18 @@ def get_locale() -> str:
 
 
 @app.route('/', strict_slashes=False)
-def index() -> Any:
+def index() -> str:
     """
     Render the index page with a title and header.
     """
     return render_template('3-index.html')
+
+
+def _(string: str) -> str:
+    """
+    Translation function.
+    """
+    return string
 
 
 if __name__ == "__main__":
