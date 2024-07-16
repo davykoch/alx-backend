@@ -37,8 +37,5 @@ def index() -> str:
     return render_template('3-index.html')
 
 
-print(_('home_title'))  # Should print "Welcome to Holberton"
-print(_('home_header'))  # Should print "Hello world!"
-
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port="5000")
