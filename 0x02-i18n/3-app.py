@@ -37,11 +37,19 @@ def index() -> str:
 
 
 # type hint and docstring for the _ function
-_: callable = _
-"""
-Wrapper for flask_babel's gettext function.
-Used for internationalizing the application.
-"""
+def _(string: str) -> str:
+    """
+    Wrapper for flask_babel's gettext function.
+    Used for internationalizing the application.
+
+    Args:
+        string (str): The string to be translated.
+
+    Returns:
+        str: The translated string.
+    """
+    return string
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port="5000")
