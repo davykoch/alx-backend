@@ -36,7 +36,7 @@ def index() -> str:
     return render_template('3-index.html')
 
 
-# Add this type hint and docstring for the _ function
+# type hint and docstring for the _ function
 _: callable = _
 """
 Wrapper for flask_babel's gettext function.
