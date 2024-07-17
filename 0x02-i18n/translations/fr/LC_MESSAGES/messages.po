@@ -290,7 +290,20 @@ msgstr ""
 msgid "Welcome to Holberton"
 msgstr "Bienvenue chez Holberton"
 
-#: templates/4-index.html:9
+#: templates/5-index.html:9
+msgid "Welcome to Holberton"
+msgstr "Bienvenue chez Holberton"
+
+msgid "Hello world!"
+msgstr "Bonjour monde!"
+
+msgid "You are logged in as %(username)s."
+msgstr "Vous êtes connecté en tant que %(username)s."
+
+msgid "You are not logged in."
+msgstr "Vous n'êtes pas connecté."
+
+#. templates./6-index.html
 msgid "Welcome to Holberton"
 msgstr "Bienvenue chez Holberton"
 
