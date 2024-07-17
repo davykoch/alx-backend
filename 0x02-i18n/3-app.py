@@ -3,8 +3,7 @@
 Flask app with Babel configuration and locale selector.
 """
 from flask import Flask, render_template, request
-from flask_babel import _
-from flask_babel import Babel
+from flask_babel import Babel, _
 from typing import Any
 
 
@@ -25,8 +24,7 @@ def get_locale() -> str:
     """
     Determine the best match with our supported languages.
     """
-    # For testing, always return 'en'
-    return 'en'
+    return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
 @app.route('/', strict_slashes=False)
