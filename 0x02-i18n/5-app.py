@@ -65,5 +65,19 @@ def index() -> str:
     return render_template('5-index.html')
 
 
+def _(string: str) -> str:
+    """
+    Wrapper for flask_babel's gettext function.
+    Used for internationalizing the application.
+
+    Args:
+        string (str): The string to be translated.
+
+    Returns:
+        str: The translated string.
+    """
+    return string
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port="5000")
