@@ -4,7 +4,10 @@ Flask app with Babel configuration and locale selector.
 """
 from flask import Flask, render_template, request
 from flask_babel import Babel, _
-from typing import Any
+from typing import Union
+
+app = Flask(__name__)
+babel = Babel(app)
 
 
 class Config:
@@ -14,13 +17,11 @@ class Config:
     BABEL_DEFAULT_TIMEZONE = "UTC"
 
 
-app = Flask(__name__)
 app.config.from_object(Config)
-babel = Babel(app)
 
 
 @babel.localeselector
-def get_locale() -> str:
+def get_locale() -> Union[str, None]:
     """
     Determine the best match with our supported languages.
     """
@@ -34,6 +35,13 @@ def index() -> str:
     """
     return render_template('3-index.html')
 
+
+# Add this type hint and docstring for the _ function
+_: callable = _
+"""
+Wrapper for flask_babel's gettext function.
+Used for internationalizing the application.
+"""
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port="5000")
