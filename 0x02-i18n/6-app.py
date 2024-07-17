@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """
 Flask app with Babel configuration, locale selector, and mock user login.
+This module implements a Flask web application with internationalization
+features using Flask-Babel.
 """
 from flask import Flask, render_template, request, g
 from flask_babel import Babel
@@ -39,7 +41,7 @@ def get_user() -> Union[Dict, None]:
 
 
 @app.before_request
-def before_request():
+def before_request() -> None:
     """
     Use get_user to find a user if any, and set it as a global on flask.g.user.
     """
@@ -51,6 +53,9 @@ def get_locale() -> str:
     """
     Determine the best match with our supported languages.
     Priority: URL parameters > user settings > request header > default
+
+    Returns:
+        str: The selected locale.
     """
     # 1. Locale from URL parameters
     locale = request.args.get('locale')
@@ -71,14 +76,21 @@ def get_locale() -> str:
 def index() -> str:
     """
     Render the index page with a title and header.
+
+    Returns:
+        str: Rendered HTML template.
     """
     return render_template('6-index.html')
 
-# Add this context processor
-
 
 @app.context_processor
-def inject_get_locale():
+def inject_get_locale() -> Dict[str, callable]:
+    """
+    Make get_locale function available for all templates.
+
+    Returns:
+        Dict[str, callable]: A dictionary with get_locale function.
+    """
     return dict(get_locale=get_locale)
 
 
