@@ -8,9 +8,9 @@
 <body>
     <h1>{{ _('Hello world!') }}</h1>
     {% if g.user %}
-    <p>{{ _('logged_in_as', username=g.user.name) }}</p>
+    <p>{{ _('You are logged in as %(username)s.', username=g.user['name']) }}</p>
     {% else %}
-    <p>{{ _('not_logged_in') }}</p>
+    <p>{{ _('You are not logged in.') }}</p>
     {% endif %}
 </body>
 </html>

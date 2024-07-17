@@ -291,19 +291,15 @@ msgid "Welcome to Holberton"
 msgstr "Bienvenue chez Holberton"
 
 #: templates/4-index.html:9
-msgid "Hello world!"
-msgstr "Bonjour monde!"
-
-#: templates/5-index.html
 msgid "Welcome to Holberton"
 msgstr "Bienvenue chez Holberton"
 
 msgid "Hello world!"
 msgstr "Bonjour monde!"
 
-msgid "logged_in_as"
+msgid "You are logged in as %(username)s."
 msgstr "Vous êtes connecté en tant que %(username)s."
 
-msgid "not_logged_in"
+msgid "You are not logged in."
 msgstr "Vous n'êtes pas connecté."
 

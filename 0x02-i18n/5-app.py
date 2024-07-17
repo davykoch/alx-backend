@@ -3,7 +3,7 @@
 Flask app with Babel configuration, locale selector, and mock user login.
 """
 from flask import Flask, render_template, request, g
-from flask_babel import Babel
+from flask_babel import Babel, _
 from typing import Union, Dict
 
 app = Flask(__name__)
@@ -33,7 +33,7 @@ def get_user() -> Union[Dict, None]:
     if login_as was not passed.
     """
     login_id = request.args.get('login_as')
-    if login_id:
+    if login_id and login_id.isdigit():
         return users.get(int(login_id))
     return None
 
